@@ -3602,6 +3602,13 @@ document.cookid = 'name=dachui;expires='+date.toUTCString()
 刷新页面之后里面的数据会保留
 
 ```js
+sessionStorage.setItem('name','goudan');//设置值
+sessionStorage.getItem();//取值
+sessionStorage.removeItem('name');//删
+sessionStorage.clear();//全删
+```
+
+```js
 localStorage.setItem("对象",JSON.stringify(对象))
 ```
 
