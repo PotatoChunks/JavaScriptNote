@@ -2640,6 +2640,34 @@ Function.prototype.__ proto __ === Object.prototype
 
 ####  继承
 
+一个构造函数继承两一个构造函数的`proto` 
+
+```js
+function Goudan(name,age){
+    this.name = name
+    this.age = age
+}
+Goudan.prototype.say = function(){}
+function Dachui(name,age){
+    //私有属性的继承
+    Goudan.call(this,name,age)
+}
+//原型继承
+Dachui.prototype = new Goudan();
+//另一种原型继承的方法
+function F(){}
+F.prototype = Goudan.prototype
+Dachui.prototype = new F()
+```
+
+##### ES6继承
+
+```js
+class Goudan extends Dachui{}//谁继承与谁
+```
+
+
+
 ### 代码执行顺序
 
 异步代码 : 不按顺序
