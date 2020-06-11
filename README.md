@@ -3580,6 +3580,20 @@ box.dispatchEvent(evnet)//触发一个自定义事件
 请求之中存在用户信息的确认
 有时效性
 
+前端设置`cookie` 
+
+```js
+document.cookie = 'name=goudan'
+```
+
+设置过期时间
+
+```js
+//在设置cookie的内容最后面写上代码
+let date = new Date(new Date().getTime() + 24*60*1000)//一天
+document.cookid = 'name=dachui;expires='+date.toUTCString()
+```
+
 #### localStorage
 
 本地存储 将前端的数据保存到本地
