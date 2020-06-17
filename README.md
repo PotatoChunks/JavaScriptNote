@@ -2256,10 +2256,24 @@ Date() 直接执行返回时间有关的字符串
 防止流量过大造成麻烦
 防止大量高密度事件触发冲击后台 或冲击业务逻辑, 用户体验糟糕
 
+```js
+let state = true;
+if(state)return
+state = false;
+//一些代码...
+setTimeout(()=>{state = true},900)
+```
+
 ### 防抖
 
 防止抖动
 防止大量信息处理
+
+```js
+let timer = null;
+clearTimeout(timer);
+timer = setTimeout(()=>{console.log(1)},500);
+```
 
 ### 正则表达式
 
