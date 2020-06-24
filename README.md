@@ -3545,6 +3545,7 @@ ul.addEventListener("click",function (){
 box.addEventListener("click",function(){
     console.log(1)
 },false)//是否在捕获阶段触发
+//或者第三个参数是 {passive:false}
 ```
 
 ###### 阻止事件进一步传递 e.stopPropagation()
@@ -3555,6 +3556,12 @@ e是 event对象
 ###### 阻止事件的默认行为`e.preventDefault()` 
 
 页面中有一些默认行为
+
+#### 阻止选中文本
+
+```js
+document.onselectstart = function(){return false}
+```
 
 #### 自定义事件
 
