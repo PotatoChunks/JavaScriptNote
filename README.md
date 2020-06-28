@@ -3928,3 +3928,53 @@ m.get(a)//取值
 与 (&) 有0出0 全1出1
 
 异或 (^) 相等出0 不等出1
+
+## 拖拽
+
+就是鼠标按下,并且鼠标移动
+
+```js
+let app = document.gitElementById('app');
+app.onmousedown = function(e){
+    //获取鼠标当前的位置
+    let x = e.clientX - e.offsetLeft;
+    let y = e.clientY - e.offsetTop;
+    app.onmouseenter = (e)=>{
+        //更改他的translate的css样式
+    }
+}
+```
+
+在`H5` 里面需要在标签里设置属性
+`draggable` 是`HTML` 5的新特性
+
+```html
+<div id='app' draggable='true'></div>
+<!-- true false auto auto是更具浏览器定义是否可以拖拽 true是可以拖拽-->
+```
+
+```js
+app.ondragend = (e)=>{
+    //拖拽的事件函数
+    this.style.cssText = `left:${e.clientX}px;top:${e.clientY}px;`
+}
+```
+
+### 拖拽开始事件`ondragstart` 
+
+### 拖拽过程中触发`ondrag` 
+
+### 拖拽结束事件`ondragend` 
+
+### 元素被拖拽到当前元素上`ondragenter` 
+
+一个物体被拖拽到了当前元素上面所触发的事件
+
+### 元素拖到当前元素上并停留了`ondragover` 
+
+一个元素拖拽到当前元素上并停留了
+需要阻止默认时间`e.preventDefault()` 
+
+### 拖拽的元素离开了当前元素`ondragleave` 
+
+### 被拖拽的元素在当前元素上松开了鼠标`ondrop` 
