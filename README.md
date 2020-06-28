@@ -3978,3 +3978,18 @@ app.ondragend = (e)=>{
 ### 拖拽的元素离开了当前元素`ondragleave` 
 
 ### 被拖拽的元素在当前元素上松开了鼠标`ondrop` 
+
+## 文件上传
+
+创建一个文件读取的对象实例
+
+### `new FileReader ` 
+
+```js
+let fil = new FileReader()
+fil.readAsBinaryString //使用原始二进制字符串来表示文件数据
+fil.readAsArrayBuffer //使用指定的二进制对象来读取内容
+fil.readAsText //使用文本字符串来展示文件数据
+fil.readAsDataURL //用URL展示文件数据
+```
+
