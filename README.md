@@ -924,6 +924,17 @@ function getBoys(item){
 ]
 ```
 
+##### `endsWith` 检测字符串
+
+从末尾开始检测
+
+```js
+'goudan.dachui'.endsWith('dachui')//从末尾检测是否有 dachui这个字符串
+//返回 true
+```
+
+
+
 ##### map() 方法 数组的每一项进行操作形成一个新的数组
 
 操作每一项 , 最后**打包成数组**
@@ -3131,6 +3142,10 @@ DOM: document object model
 谁在外面紧紧的包裹里面的元素外面的元素就是里面的父节点
 一个标签可以使子节点也可以是父节点
 
+`document.onload` 标签加载完成
+
+`document.ready` 标签和图片加载完成
+
 #### DOM树
 
 页面元素从html节点开始分叉一直可以递归分叉到任意元素
@@ -3607,6 +3622,8 @@ box.dispatchEvent(evnet)//触发一个自定义事件
 document.cookie = 'name=goudan'
 ```
 
+设置多个需要逗号隔开
+
 设置过期时间
 
 ```js
@@ -3630,7 +3647,7 @@ sessionStorage.clear();//全删
 ```
 
 ```js
-localStorage.setItem("对象",JSON.stringify(对象))
+localStorage.setItem("goudan",JSON.stringify(对象))
 ```
 
 ##### setItem 设置localStorage()里面的值
@@ -3724,6 +3741,13 @@ ctx.fill()
 ctx.lineWidth = 3
 ```
 
+###### 线条头尾样式lineCap
+
+```js
+ctx.lineCap = 'round'//圆角
+ctx.lineCap = 'square'//正方形 比原来的长
+```
+
 ###### 线条颜色 strokeStyle
 
 是全局的笔的颜色
@@ -3764,10 +3788,12 @@ ctx.fillRect(300,300,100,200)
 先规定圆弧的圆心 半径 开始的坐标角度 结束的圆弧角度 顺时针/逆时针
 
 ```js
-ctx.arc(400,100,50,0,1,false)//圆心的X坐标 ,Y坐标 ,半径 ,开始角度 ,结束角度 ,顺逆方向(默认顺) false是顺时针
+ctx.arc(400,100,50,0,1,false)//圆心的X坐标 ,Y坐标 ,半径 ,开始角度 ,结束角度 ,顺逆方向(默认顺) false是逆时针
 ```
 
 开始画圆的位置是 Math.PI/2
+
+写文字`strokeText('写的文字',文字x位置,文字y位置,宽度)` 
 
 #### 绘制图片到canvas
 
@@ -3798,8 +3824,6 @@ ctx.drawImage(img, 700, 100, 100, 100)//后两个是 X方向的长度 Y方向的
 ```js
 ctx.drawImage(img, 130,50,230,250,700,100,235,250)//原始裁切的起始位置(两个值),原始图裁切大小(两个值),canvas的绘制位置(两个值), canvas的绘制大小(两个值)
 ```
-
-
 
 #### 获取canvas中的图片信息数据getImageData()
 
