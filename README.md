@@ -3012,7 +3012,16 @@ fetch("地址",{method:"GET"})
 	.then(response=>response.json())//先用json方法整理成json对象在点then
 	.then(res=>{
     console.log(res)//这个才是fetch返回后端的数据
-})
+	})
+//post请求
+fetch('地址',{
+    body: JSON.stringify(参数),
+    headers: {//必须写
+        'user-agent': 'Mozilla/4.0 MDN Example',
+        'content-type': 'application/json'
+    },
+    method: 'POST'//请求方式
+}).then().then(res)
 ```
 
 ### 跨域
